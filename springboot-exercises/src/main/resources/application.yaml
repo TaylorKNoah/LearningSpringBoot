@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: springboot-exercises
+  datasource:
+    url: jdbc:mysql://localhost:3306/store?createDatabaseIfNotExist=true
+    username: root
+    password: WormholeProtocol!3590
+notification-manager:
+  service: Email
+user-registration:
+  notification-service:
+    service: Email
+    host: http://somehost.com
+    port: 8080
+  user-repository: InMemory
