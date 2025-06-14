@@ -4,11 +4,11 @@ import com.codewithmosh.springboot_exercises.exercises.userregistration.data.Use
 import com.codewithmosh.springboot_exercises.exercises.userregistration.notifications.INotificationService;
 import com.codewithmosh.springboot_exercises.exercises.userregistration.userrepository.IUserRepository;
 
-public class UserService {
+public class UserRegistrationService {
     private IUserRepository userRepository;
     private INotificationService notificationService;
 
-    public UserService(IUserRepository userRepository, INotificationService notificationService) {
+    public UserRegistrationService(IUserRepository userRepository, INotificationService notificationService) {
         this.userRepository = userRepository;
         this.notificationService = notificationService;
     }

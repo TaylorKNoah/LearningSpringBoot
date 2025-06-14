@@ -20,5 +20,3 @@ CREATE TABLE `store`.`user_tags` (
     REFERENCES `store`.`tag` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
-
-
