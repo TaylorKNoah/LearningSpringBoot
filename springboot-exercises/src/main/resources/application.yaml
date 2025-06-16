@@ -5,6 +5,8 @@ spring:
     url: jdbc:mysql://localhost:3306/store?createDatabaseIfNotExist=true
     username: root
     password: WormholeProtocol!3590
+  jpa:
+    show-sql: true
 notification-manager:
   service: Email
 user-registration:
