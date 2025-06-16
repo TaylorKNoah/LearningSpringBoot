@@ -8,7 +8,7 @@ CREATE TABLE `users` (
 
 CREATE TABLE `addresses` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `userId` bigint NOT NULL,
+  `user_id` bigint NOT NULL,
   `street` varchar(255) NOT NULL,
   `city` varchar(255) NOT NULL,
   `zip` varchar(255) NOT NULL,
