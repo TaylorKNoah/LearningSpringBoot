@@ -23,7 +23,7 @@ public class Category {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category", cascade = CascadeType.PERSIST)
     @Builder.Default
     @ToString.Exclude
     private Set<Product> products = new HashSet<>();
