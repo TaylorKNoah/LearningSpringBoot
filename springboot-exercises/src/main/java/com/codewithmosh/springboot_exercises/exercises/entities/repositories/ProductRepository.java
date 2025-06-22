@@ -6,6 +6,7 @@ import com.codewithmosh.springboot_exercises.exercises.entities.data.dtos.Produc
 import com.codewithmosh.springboot_exercises.exercises.entities.data.dtos.ProductSummaryDto;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
@@ -47,10 +48,12 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
     // find all products in a price range and sort by name
     @Query("select p from Product p where p.price between :min and :max order by p.name")
     List<Product> findPreferredProducts(@Param("min") BigDecimal min, @Param("max") BigDecimal max);
+
     // name is really long, here's how to shorten it.
     // @Query takes either SQL or JPQL ( java persistence query language - portable across db eingines, but more limited )
-    @Query(value = "select * from products p where p.price between :min and :max order by p.name", nativeQuery = true)
-    List<Product> findProducts(@Param("min") BigDecimal min,@Param("max") BigDecimal max);
+    // @Query(value = "select * from products p where p.price between :min and :max order by p.name", nativeQuery = true)
+    @Procedure("findProductsByPrice")
+    List<Product> findProducts(BigDecimal min, BigDecimal max);
 
     // aggregate ex
     @Query("select count(p) from Product p where p.price between :min and :max")

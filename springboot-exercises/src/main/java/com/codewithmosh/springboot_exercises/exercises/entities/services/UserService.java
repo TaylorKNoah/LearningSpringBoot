@@ -135,12 +135,9 @@ public class UserService {
         productRepository.updatePriceByCategory(BigDecimal.valueOf(10), 1L);
     }
 
+    @Transactional
     public void fetchProducts(){
-        var category = Category.builder()
-                .id((byte)1)
-                .build();
-
-        var products = productRepository.findByCategory(category);
+        var products = productRepository.findProducts(BigDecimal.valueOf(1), BigDecimal.valueOf(20));
         products.forEach(System.out::println);
     }
 
