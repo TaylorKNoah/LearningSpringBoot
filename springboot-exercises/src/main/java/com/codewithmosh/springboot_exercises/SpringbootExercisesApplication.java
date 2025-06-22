@@ -12,6 +12,6 @@ public class SpringbootExercisesApplication {
 	{
 		ApplicationContext context = SpringApplication.run(SpringbootExercisesApplication.class, args);
 		var userService = context.getBean(UserService.class);
-		userService.fetchUser();
+		userService.fetchUsers();
 	}
 }

@@ -146,17 +146,16 @@ public class UserService {
 
     @Transactional
     public void fetchUser(){
-        var user = userRepository.findByEmail("coolguy@coolmail.cool").orElseThrow();
+        var user = userRepository.findByEmail("coolio@coolmail.com").orElseThrow();
         System.out.println(user);
     }
 
     @Transactional
     public void fetchUsers(){
-        var users = userRepository.findAll();
+        var users = userRepository.findAllWithTags();
         users.forEach(u -> {
             System.out.println(u);
             u.getAddresses().forEach(System.out::println);
         });
     }
-
 }
