@@ -13,7 +13,6 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Entity
 @Table(name = "users")
 public class User {
@@ -92,5 +91,13 @@ public class User {
     public void removeFromWishlist(Product product){
         wishlist.remove(product);
         product.getUsers().remove(this);
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "(" +
+                "id = " + id + ", " +
+                "name = " + name + ", " +
+                "email = " + email + ")";
     }
 }
